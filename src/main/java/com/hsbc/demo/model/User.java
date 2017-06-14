@@ -1,5 +1,4 @@
-package com.hsbc.demo.model;
-
+package com.hsbc.demo.model;//对象实体类 
 public class User {   
     private String userName;  
       
