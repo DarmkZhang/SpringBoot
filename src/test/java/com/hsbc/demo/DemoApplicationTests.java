@@ -22,7 +22,7 @@ import com.hsbc.demo.model.User;
 public class DemoApplicationTests {
 	@Autowired
 	private MockMvc mvc;
-
+    //一个小的更改
 	@Test
 	public void contextLoads() throws Exception{
 		mvc.perform(MockMvcRequestBuilders.get("/"))
