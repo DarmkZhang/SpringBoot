@@ -2,6 +2,7 @@ package com.hsbc.demo.Validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.hsbc.demo.model.User;
@@ -16,10 +17,11 @@ public class UsernameLenght implements Validator{
 
 	@Override
 	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmpty(errors, "userName", "user.userName.required", "用户名不能为空");
 		// TODO Auto-generated method stub
 		User user = (User)target;
 		int length = user.getUserName().length();
-		if (length > 20) {
+		if (length > 5) {
 			errors.reject("user.userName.too_long");
 			return;
 		}
