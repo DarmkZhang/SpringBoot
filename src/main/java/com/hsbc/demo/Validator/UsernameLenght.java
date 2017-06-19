@@ -19,8 +19,10 @@ public class UsernameLenght implements Validator{
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmpty(errors, "userName", "user.userName.required", "用户名不能为空");
 		// TODO Auto-generated method stub
-		User user = (User)target;
-		int length = user.getUserName().length();
+		String value = (String)target;
+		
+		
+		int length = value.length();
 		if (length > 5) {
 			errors.reject("user.userName.too_long");
 			return;

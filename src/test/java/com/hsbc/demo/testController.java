@@ -20,7 +20,7 @@ public class testController {
 	@RequestMapping(value = "/", method = RequestMethod.GET) 
 	public String val(User user,  BindingResult result){
 		user.setUserName("zhangsan");
-		usernameLenght.validate(user, result);
+		usernameLenght.validate(user.getUserName(), result);
 		String xx = null;
 		if(result.hasErrors()){
 			List<ObjectError>  list = result.getAllErrors();
@@ -34,7 +34,7 @@ public class testController {
 	@RequestMapping(value = "/l", method = RequestMethod.GET) 
 	public String vall(User user,  BindingResult result){
 		user.setUserName("");
-		usernameLenght.validate(user, result);
+		usernameLenght.validate(user.getUserName(), result);
 		String xx = null;
 		if(result.hasErrors()){
 			List<ObjectError>  list = result.getAllErrors();
